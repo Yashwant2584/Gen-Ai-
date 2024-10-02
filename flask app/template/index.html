@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendation System</title>
+</head>
+<body>
+    <h1>Book Recommendation System</h1>
+    <form method="POST">
+        <label for="book_title">Select a book title:</label>
+        <select name="book_title" id="book_title">
+            {% for title in df['Title'].values %}
+            <option value="{{ title }}">{{ title }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Get Recommendations</button>
+    </form>
+
+    {% if book_title %}
+        <h2>Selected Book: {{ book_title }}</h2>
+        <h3>Top 5 recommended books based on Genre:</h3>
+        <ul>
+            {% for book in recommended_books %}
+            <li>{{ book }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
