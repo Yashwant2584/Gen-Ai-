@@ -60,3 +60,5 @@ else:
             st.write(f"{i+1}. {get_title_from_index(index)} (Score: {score:.2f})")
 
 # Run the app using `streamlit run your_file.py`
+
+print("Trying out things")
